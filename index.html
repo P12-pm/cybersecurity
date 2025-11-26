@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Defence | Cyber Security Solutions</title>
+    
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+     
+</head>
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="page-background"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" onclick="showSection('home')">
+                <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="logo-text">
+                    <span class="fw-bold">NATIVE</span>DEFENCE<br>
+                    <small>An ISO 27001 Certified Company</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active-page" onclick="showSection('home')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('nativesoc')">NativeSOC</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('academy')">Academy</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('vapt')">VAPT</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('about')">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('partners')">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         1. HOME SECTION
+    ========================================== -->
+    <section id="home" class="content-section active home-section">
+    <div class="container">
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">Defense is the Best Offence in</h1>
+            <h1 class="hero-highlight">Cyber Security</h1>
+            <p class="hero-description">
+                NATIVESOC a technology from NativeDefence helps you stay ahead of the threat, 
+                detect early, manage better and ultimately defend yourself better. 
+                Stay ahead of the threat, Stay ahead in the Fight.
+            </p>
+            <div class="hero-buttons" >
+                <a href="contact.html" onclick="showSection('contact')" class="btn-hero-primary">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact Us</span>
+                </a>
+                <a href="coures.html" onclick="showSection('services')" class="btn-hero-outline">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Our Services</span>
+                </a>
+            </div>
+            <div class="threat-intel-box">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Click To View Threat Intel</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stats-card">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <span class="stat-number">3.5K</span>
+                            <span class="stat-label">Engagements</span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-item has-border">
+                            <span class="stat-number">22M+</span>
+                            <span class="stat-label">Monitored Globally</span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-item has-border">
+                            <span class="stat-number">22K+</span>
+                            <span class="stat-label">Network Sensors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Overview - NEW -->
+        <div class="services-overview">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">Comprehensive cybersecurity solutions for your organization</p>
+            </div>
+            <div class="services-grid">
+                <div class="row">
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="service-mini-card">
+                            <div class="service-icon">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <h5>SOC Services</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="service-mini-card">
+                            <div class="service-icon">
+                                <i class="fa-solid fa-bug"></i>
+                            </div>
+                            <h5>VAPT</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="service-mini-card">
+                            <div class="service-icon">
+                                <i class="fa-solid fa-user-secret"></i>
+                            </div>
+                            <h5>vCISO</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="service-mini-card">
+                            <div class="service-icon">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+                            <h5>Cloud Security</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="service-mini-card">
+                            <div class="service-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h5>Training</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="service-mini-card">
+                            <div class="service-icon">
+                                <i class="fa-solid fa-file-shield"></i>
+                            </div>
+                            <h5>Compliance</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us - NEW -->
+        <div class="why-us-section">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="why-us-content">
+                        <h2 class="section-title">Why Choose NATIVEDEFENCE?</h2>
+                        <p class="section-text">We provide end-to-end cybersecurity solutions with our Made-in-India SOC technology and 20+ years of industry expertise.</p>
+                        
+                        <div class="why-us-list">
+                            <div class="why-item">
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                </div>
+                                <div class="why-content">
+                                    <h5>24/7 Threat Monitoring</h5>
+                                    <p>Round-the-clock surveillance of your digital assets.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                </div>
+                                <div class="why-content">
+                                    <h5>Made in India SOC</h5>
+                                    <p>State-of-the-art indigenous security technology.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                </div>
+                                <div class="why-content">
+                                    <h5>Expert Team</h5>
+                                    <p>20+ years of combined cybersecurity experience.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                </div>
+                                <div class="why-content">
+                                    <h5>Rapid Response</h5>
+                                    <p>Quick incident response and threat mitigation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="why-us-stats">
+                        <div class="stats-box-grid">
+                            <div class="stats-box">
+                                <div class="stats-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <span class="stats-number">100+</span>
+                                <span class="stats-text">Clients Protected</span>
+                            </div>
+                            <div class="stats-box">
+                                <div class="stats-icon">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <span class="stats-number">15+</span>
+                                <span class="stats-text">Countries Served</span>
+                            </div>
+                            <div class="stats-box">
+                                <div class="stats-icon">
+                                    <i class="fa-solid fa-bug-slash"></i>
+                                </div>
+                                <span class="stats-number">50K+</span>
+                                <span class="stats-text">Threats Blocked</span>
+                            </div>
+                            <div class="stats-box">
+                                <div class="stats-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <span class="stats-number">99.9%</span>
+                                <span class="stats-text">Uptime Guaranteed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section - NEW -->
+        <div class="features-section">
+            <div class="section-header">
+                <h2 class="section-title">NATIVESOC Features</h2>
+                <p class="section-subtitle">Advanced capabilities for comprehensive security</p>
+            </div>
+            <div class="features-grid">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h4>Real-time Monitoring</h4>
+                            <p>Continuous surveillance of network traffic, endpoints, and cloud environments.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <h4>AI-Powered Detection</h4>
+                            <p>Machine learning algorithms for advanced threat detection and prediction.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h4>Automated Response</h4>
+                            <p>Instant automated actions to contain and neutralize threats.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h4>Analytics Dashboard</h4>
+                            <p>Comprehensive reporting and visualization of security metrics.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                            <h4>SIEM Integration</h4>
+                            <p>Seamless integration with existing security tools and platforms.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-file-contract"></i>
+                            </div>
+                            <h4>Compliance Ready</h4>
+                            <p>Built-in compliance templates for GDPR, ISO 27001, PCI-DSS, and more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industries Section - NEW -->
+        <div class="industries-section">
+            <div class="section-header">
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">Tailored security solutions for every sector</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>BFSI</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-hospital"></i>
+                    <span>Healthcare</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-industry"></i>
+                    <span>Manufacturing</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Education</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>E-Commerce</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-landmark"></i>
+                    <span>Government</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-tower-broadcast"></i>
+                    <span>Telecom</span>
+                </div>
+                <div class="industry-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Energy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials-section">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Trusted by leading organizations worldwide</p>
+            </div>
+            
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                </div>
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                The knowledge and skills gained through NATIVEDEFENCE have transformed how we approach security. We now recognize threats faster and respond more efficiently.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Mr. Mahesh Bhosale</h5>
+                                    <p class="author-title">AGM & HEAD IT</p>
+                                    <p class="author-company">Sun Petrochemicals Pvt. Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                Cybersecurity is core to Mobileware Technologies. Using NativeDefence Tech LLP's SOC services, we proactively monitor threats, reinforcing our commitment to top-tier security and compliance.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Mr. Carlin Crasto</h5>
+                                    <p class="author-title">CTO</p>
+                                    <p class="author-company">Mobileware Technologies Pvt. Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                We are genuinely impressed with the caliber of work delivered by NATIVEDEFENCE. The SOC has fortified our cybersecurity defenses and provided us with confidence and peace of mind.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Ankan Bhowmick</h5>
+                                    <p class="author-title">IT Head</p>
+                                    <p class="author-company">Alliance Broadband</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                NATIVEDEFENCE is our virtual CISO. They helped develop our strategy and empowered my IT team to be proactive by establishing a security roadmap that we can follow.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Vaibhav Thirani</h5>
+                                    <p class="author-title">Director</p>
+                                    <p class="author-company">Crux Digital Pvt. Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                NATIVEDEFENCE's NOC/SOC services have been instrumental in maintaining our network operations, uptime and security, providing swift responses to potential threats.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Dr. Prakash Bhatt</h5>
+                                    <p class="author-title">Director</p>
+                                    <p class="author-company">HCF Hospital</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                Securing our digital assets became seamless with NATIVEDEFENCE. Their IT Security services showcased exceptional expertise, identifying vulnerabilities and fortifying our security infrastructure.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Shaan Zaveri</h5>
+                                    <p class="author-title">CEO</p>
+                                    <p class="author-company">Terazo Fintech LLP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                I am confident that under NATIVEDEFENCE's guidance, the Cybersecurity Excellence Center will thrive and make significant contributions to the field of cybersecurity.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Dr. H. K. Pratihari</h5>
+                                    <p class="author-title">Vice Chancellor</p>
+                                    <p class="author-company">National Forensic Sciences University</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                NATIVEDEFENCE's SOC service exceeded my expectations! Their vigilant monitoring and rapid incident response helped secure our network with unparalleled efficiency.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Md. Rakib Hasan Rana</h5>
+                                    <p class="author-title">IT Manager</p>
+                                    <p class="author-company">LEVERnGEAR Limited</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 9 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                NATIVEDEFENCE provided us with a dedicated vCISO who quickly integrated into our organization. Since engaging their services, we've seen a significant reduction in security incidents.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Arunava Chowdhury</h5>
+                                    <p class="author-title">CTO</p>
+                                    <p class="author-company">24online Info Technologies Pvt. Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 10 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="quote-text">
+                                Team support including threat hunting & mitigation process is peace of mind for us. Highly recommended for robust cybersecurity protection.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="author-name">Jithu M G</h5>
+                                    <p class="author-title">IT Head</p>
+                                    <p class="author-company">Sentient Infotech Pvt. Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Partners/Clients Logo Section - NEW -->
+        <div class="partners-section">
+            <div class="section-header">
+                <h2 class="section-title">Trusted By</h2>
+            </div>
+            <div class="partners-slider">
+                <div class="partner-logo">
+                    <i class="fa-solid fa-building"></i>
+                    <span>TCS</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Infosys</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Wipro</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fa-solid fa-building"></i>
+                    <span>HCL</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Tech Mahindra</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Cognizant</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section - NEW -->
+        <div class="home-cta">
+            <div class="cta-content">
+                <h3>Ready to Secure Your Organization?</h3>
+                <p>Get a free security assessment and consultation from our experts</p>
+                <div class="cta-buttons">
+                    <a href="#" onclick="showSection('contact')" class="btn-cta-primary">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Schedule Consultation</span>
+                    </a>
+                    <a href="tel:+919876543210" class="btn-cta-secondary">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 98765 43210</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- =========================================
+         2. NATIVESOC SECTION
+    ========================================== -->
+   <section id="nativesoc" class="content-section soc-section">
+    <div class="container">
+        
+        <!-- Section Header -->
+        <div class="soc-header text-center">
+            <div class="badge-soc">Made In India</div>
+            <h2 class="soc-title">NATIVE<span class="text-primary">SOC</span> Platform</h2>
+            <p class="soc-subtitle">Unified Security Intelligence & Automated Response</p>
+        </div>
+
+        <!-- Intro Text & Overview -->
+        <div class="soc-intro">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="intro-card">
+                        <p class="lead">
+                            A next-gen all-in-one on-prem & cloud security platform that seamlessly integrates 
+                            <span class="text-highlight">SIEM, XDR, HIDS, FIM, VA, and SOAR</span> into a single, cohesive system.
+                        </p>
+                        <p>
+                            It combines data from multiple sources to provide <strong>Endpoint Detection & Response (EDR)</strong>, 
+                            <strong>User & Entity Behavior Analytics (UEBA)</strong>, and <strong>Network Traffic Analysis (NTA)</strong>. 
+                            NativeSOC focuses on host-based intrusion detection to identify potential threats and mitigate risk factors with advanced reporting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Core Platform Modules (Explaining the Acronyms) -->
+        <div class="soc-modules mt-5">
+            <h3 class="text-center text-white mb-4">Core Platform Modules</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h4>SIEM</h4>
+                        <p>Security Information and Event Management. Centralized log collection and correlation for real-time analysis.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>XDR</h4>
+                        <p>Extended Detection and Response. Cross-layered detection across endpoints, networks, and clouds.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h4>SOAR</h4>
+                        <p>Security Orchestration, Automation, and Response. Automate incident response workflows to reduce MTTR.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-laptop-file"></i></div>
+                        <h4>FIM & HIDS</h4>
+                        <p>File Integrity Monitoring & Host Intrusion Detection. Detect unauthorized file changes and host-based attacks.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4>UEBA</h4>
+                        <p>User & Entity Behavior Analytics. AI-driven analysis to detect anomalous behavior and insider threats.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h4>VA</h4>
+                        <p>Vulnerability Assessment. Continuous scanning to identify and remediate security weaknesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Feature Boxes (Redesigned) -->
+        <div class="soc-navigation mt-5 pt-4">
+            <h3 class="text-center text-white mb-4">Explore NativeSOC</h3>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="natapproach.html" class="nav-box">
+                        <div class="nav-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <div class="nav-content">
+                            <span class="nav-number">01</span>
+                            <h4>NativeSOC Approach</h4>
+                            <p>Proactive threat hunting with AI-driven detection.</p>
+                        </div>
+                        <div class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="natarchi.html" class="nav-box">
+                        <div class="nav-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <div class="nav-content">
+                            <span class="nav-number">02</span>
+                            <h4>NativeSOC Architecture</h4>
+                            <p>Scalable microservices for on-prem & cloud.</p>
+                        </div>
+                        <div class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="natfea.html" class="nav-box">
+                        <div class="nav-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="nav-content">
+                            <span class="nav-number">03</span>
+                            <h4>NativeSOC Features</h4>
+                            <p>Unified capabilities: SIEM, XDR, SOAR & more.</p>
+                        </div>
+                        <div class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <a href="nathow.html" class="nav-box">
+                        <div class="nav-icon"><i class="fa-solid fa-gears"></i></div>
+                        <div class="nav-content">
+                            <span class="nav-number">04</span>
+                            <h4>How It Works?</h4>
+                            <p>Collect, Analyze, Detect, Respond workflow.</p>
+                        </div>
+                        <div class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <a href="natwhy.html" class="nav-box">
+                        <div class="nav-icon"><i class="fa-solid fa-shield-check"></i></div>
+                        <div class="nav-content">
+                            <span class="nav-number">05</span>
+                            <h4>Why NativeSOC?</h4>
+                            <p>Cost-effective, unified security reduced complexity.</p>
+                        </div>
+                        <div class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Capabilities Infographic Grid -->
+        <div class="capabilities-section mt-5 pt-4">
+            <h3 class="text-center text-white mb-4">Key Capabilities</h3>
+            <div class="capabilities-grid">
+                <div class="cap-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Security Analytics</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <span>Intrusion Detection</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <span>Log Data Analysis</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-file-shield"></i>
+                    <span>File Integrity</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Vulnerability</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Config Assessment</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span>Incidence Response</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <span>Regulatory Compliance</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>Cloud Security</span>
+                </div>
+                <div class="cap-item">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>Container Security</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Target Verticals -->
+        <div class="verticals-section mt-5 pt-4">
+            <h3 class="text-center text-white mb-4">Target Verticals</h3>
+            <div class="verticals-grid">
+                <div class="vertical-badge"><i class="fa-solid fa-building-columns"></i> BFSI</div>
+                <div class="vertical-badge"><i class="fa-solid fa-money-bill-trend-up"></i> Financial Services</div>
+                <div class="vertical-badge"><i class="fa-solid fa-hospital"></i> Healthcare</div>
+                <div class="vertical-badge"><i class="fa-solid fa-industry"></i> Manufacturing</div>
+                <div class="vertical-badge"><i class="fa-solid fa-scale-balanced"></i> Legal & Audit</div>
+                <div class="vertical-badge"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+                <div class="vertical-badge"><i class="fa-solid fa-cart-shopping"></i> Retail</div>
+                <div class="vertical-badge"><i class="fa-solid fa-truck-fast"></i> Transportation</div>
+                <div class="vertical-badge"><i class="fa-solid fa-users"></i> Credit Unions</div>
+                <div class="vertical-badge"><i class="fa-solid fa-plane"></i> Aviation</div>
+                <div class="vertical-badge"><i class="fa-solid fa-car"></i> Auto Dealers</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- =========================================
+         3. ACADEMY SECTION
+    ========================================== -->
+    <section id="academy" class="content-section academy-section">
+    <div class="container">
+        
+        <!-- Academy Header -->
+        <div class="academy-header">
+            <div class="logo-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h2 class="academy-brand">NATIVE<span>DEFENCE</span></h2>
+            <p class="academy-label">ACADEMY</p>
+            <p class="academy-tagline">Empowering Cybersecurity Excellence Since 2004</p>
+        </div>
+
+        <!-- Academy Introduction -->
+        <div class="academy-intro">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <p class="intro-highlight">NATIVEDEFENCE: Empowering Cybersecurity Excellence</p>
+                    <p class="intro-text">Welcome to NATIVEDEFENCE, your trusted partner in the realm of cybersecurity. Originating from the vibrant city of Ahmedabad, NATIVEDEFENCE stands at the forefront with a singular focus on providing cutting-edge cybersecurity courses.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features Grid -->
+        <div class="academy-features">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h4>Our Mission</h4>
+                        <p>Fortify the nation's cybersecurity landscape with two decades of expertise.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h4>Cutting-edge SOC</h4>
+                        <p>State-of-the-art Security Operations Center, proudly made in India.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <h4>Expert Faculty</h4>
+                        <p>Seasoned professionals with real-world cybersecurity experience.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h4>Certification</h4>
+                        <p>Industry-recognized certifications upon successful completion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="why-choose-section">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="why-choose-content">
+                        <h3 class="section-title">Why Choose NATIVEDEFENCE Academy?</h3>
+                        <p class="section-text">Experience cybersecurity education like never before. We take pride in offering distinct courses tailored to meet the dynamic challenges of the digital era.</p>
+                        
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h5>Hands-on Training</h5>
+                                    <p>Real-world labs and live projects for practical experience.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h5>Small Batch Size</h5>
+                                    <p>Personalized attention with limited students per batch.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h5>Placement Support</h5>
+                                    <p>100% placement assistance with top cybersecurity firms.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h5>Flexible Timing</h5>
+                                    <p>Weekend and evening batches available for working professionals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="why-choose-stats">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-text">Years Experience</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">5000+</span>
+                                <span class="stat-text">Students Trained</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-text">Placement Rate</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-text">Hiring Partners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Section Header -->
+        <div class="courses-header">
+            <h3 class="courses-title">Our Courses</h3>
+            <p class="courses-subtitle">Choose your path to cybersecurity excellence</p>
+        </div>
+
+        <!-- Course Boxes -->
+        <div class="courses-grid">
+            <div class="row">
+                
+                <!-- Course Box 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="course-box">
+                        <div class="course-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h5 class="course-title">SOC Analyst Training</h5>
+                        <p class="course-description">Master Security Operations Center skills with hands-on training in threat detection, incident response, and SIEM tools.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check"></i><span>Duration: 3 Months</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Live Projects</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Certification Included</span></li>
+                        </ul>
+                        <div class="course-footer">
+                            <a href="#" class="btn-course">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Box 2 - Featured -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="course-box featured">
+                        <div class="course-badge">Popular</div>
+                        <div class="course-icon">
+                            <i class="fa-solid fa-bug"></i>
+                        </div>
+                        <h5 class="course-title">Ethical Hacking & Pentesting</h5>
+                        <p class="course-description">Learn advanced penetration testing techniques, vulnerability assessment, and ethical hacking methodologies.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check"></i><span>Duration: 4 Months</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Real-world Labs</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>CEH Preparation</span></li>
+                        </ul>
+                        <div class="course-footer">
+                            <a href="#" class="btn-course">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Box 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="course-box">
+                        <div class="course-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h5 class="course-title">Cloud Security</h5>
+                        <p class="course-description">Secure cloud infrastructures across AWS, Azure, and GCP with industry-standard security practices.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check"></i><span>Duration: 2 Months</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Multi-Cloud Training</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Job Assistance</span></li>
+                        </ul>
+                        <div class="course-footer">
+                            <a href="#" class="btn-course">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Box 4 - NEW -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="course-box">
+                        <div class="course-icon">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h5 class="course-title">Network Security</h5>
+                        <p class="course-description">Master firewall configuration, IDS/IPS systems, and network monitoring to protect enterprise networks.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check"></i><span>Duration: 3 Months</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Cisco Labs</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>CCNA Security Prep</span></li>
+                        </ul>
+                        <div class="course-footer">
+                            <a href="#" class="btn-course">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Box 5 - NEW -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="course-box">
+                        <div class="course-badge new">New</div>
+                        <div class="course-icon">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h5 class="course-title">AI in Cybersecurity</h5>
+                        <p class="course-description">Learn to leverage AI and Machine Learning for threat detection, malware analysis, and security automation.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check"></i><span>Duration: 4 Months</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Python & ML Basics</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>AI Tools Training</span></li>
+                        </ul>
+                        <div class="course-footer">
+                            <a href="#" class="btn-course">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Box 6 - NEW -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="course-box">
+                        <div class="course-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h5 class="course-title">Mobile App Security</h5>
+                        <p class="course-description">Secure Android and iOS applications with advanced mobile penetration testing and code review techniques.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check"></i><span>Duration: 2 Months</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>Android & iOS Labs</span></li>
+                            <li><i class="fa-solid fa-check"></i><span>OWASP Mobile Top 10</span></li>
+                        </ul>
+                        <div class="course-footer">
+                            <a href="#" class="btn-course">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Learning Path Section - NEW -->
+        <div class="learning-path-section">
+            <h3 class="section-title">Your Learning Journey</h3>
+            <p class="section-subtitle">From beginner to cybersecurity expert</p>
+            
+            <div class="learning-path">
+                <div class="path-item">
+                    <div class="path-number">1</div>
+                    <div class="path-content">
+                        <h5>Foundation</h5>
+                        <p>Basic networking, Linux & security concepts</p>
+                    </div>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-item">
+                    <div class="path-number">2</div>
+                    <div class="path-content">
+                        <h5>Core Training</h5>
+                        <p>Choose your specialization course</p>
+                    </div>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-item">
+                    <div class="path-number">3</div>
+                    <div class="path-content">
+                        <h5>Hands-on Labs</h5>
+                        <p>Real-world projects & simulations</p>
+                    </div>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-item">
+                    <div class="path-number">4</div>
+                    <div class="path-content">
+                        <h5>Certification</h5>
+                        <p>Industry-recognized certification</p>
+                    </div>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-item">
+                    <div class="path-number">5</div>
+                    <div class="path-content">
+                        <h5>Placement</h5>
+                        <p>Job assistance & career support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section - NEW -->
+        <div class="testimonials-section">
+            <h3 class="section-title">What Our Students Say</h3>
+            <div class="testimonials-grid">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"The SOC Analyst course completely transformed my career. Got placed at a top MNC within 2 months of completion!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h6>Rahul Sharma</h6>
+                                    <span>SOC Analyst, TCS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Best ethical hacking course in Ahmedabad. The hands-on labs and real-world scenarios made learning so effective."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h6>Priya Patel</h6>
+                                    <span>Penetration Tester, Infosys</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="testimonial-text">"The faculty's industry experience really shows. They don't just teach theory - they share real-world insights."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h6>Amit Kumar</h6>
+                                    <span>Cloud Security Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section - NEW -->
+        <div class="academy-cta">
+            <div class="cta-content">
+                <h3>Ready to Start Your Cybersecurity Career?</h3>
+                <p>Join our next batch and transform your future</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-cta-primary">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Enroll Now</span>
+                    </a>
+                    <a href="#" class="btn-cta-secondary">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download Brochure</span>
+                    </a>
+                </div>
+                <p class="cta-note"><i class="fa-solid fa-phone"></i> Call us: +91 98765 43210</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- =========================================
+         4. VAPT SECTION
+    ========================================== -->
+  <section id="vapt" class="content-section vapt-section">
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="vapt-header">
+            <h2 class="vapt-title">Fortify Your Digital Defenses with NATIVEDEFENCE's VAPT</h2>
+            <p class="vapt-subtitle">Services: Elevate Your Cybersecurity Today!</p>
+            <p class="vapt-description">
+                At NativeDefence, we serve as your unwavering partner in strengthening your digital security. With a well-established history of excellence in Vulnerability Assessment and Penetration Testing (VAPT), we are wholeheartedly dedicated to fortifying your organization's defenses.
+            </p>
+        </div>
+
+        <!-- Image / Visual -->
+        <div class="vapt-img-container">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop" alt="Cyber Lock" class="vapt-image">
+        </div>
+
+        <!-- Assessment Info -->
+        <div class="vapt-info">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="info-block">
+                        <h3 class="info-title">Vulnerability Assessment</h3>
+                        <p class="info-text">
+                            Uncover vulnerabilities in your digital infrastructure proactively, beating potential attackers at their own game. Our comprehensive Vulnerability Assessment meticulously identifies weaknesses.
+                        </p>
+                    </div>
+                    <div class="info-block">
+                        <h3 class="info-title">Penetration Testing</h3>
+                        <p class="info-text">
+                            Our team of ethical hackers specializes in emulating real-world cyberattacks, rigorously testing the resilience of your systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CYBER SECURITY AWARENESS SECTION -->
+        <div class="cyber-awareness-section">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <div class="awareness-box">
+                        
+                        <!-- Header with Icon -->
+                        <div class="awareness-header">
+                            <div class="awareness-icon-wrapper">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <h2 class="awareness-title">Cyber Security Awareness</h2>
+                            <p class="awareness-tagline">Empower Your Team. Protect Your Organization.</p>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="awareness-description">
+                            <p>
+                                Human error accounts for <span class="highlight-text">95%</span> of cybersecurity breaches. 
+                                Transform your workforce into your strongest line of defense.
+                            </p>
+                        </div>
+
+                        <!-- Key Points Grid -->
+                        <div class="awareness-cards">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="awareness-card">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-envelope-open-text"></i>
+                                        </div>
+                                        <h5>Phishing Awareness</h5>
+                                        <p>Identify and avoid sophisticated phishing attacks, email scams, and social engineering tactics.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="awareness-card">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-key"></i>
+                                        </div>
+                                        <h5>Password Security</h5>
+                                        <p>Learn best practices for creating strong passwords and implementing multi-factor authentication.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="awareness-card">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-wifi"></i>
+                                        </div>
+                                        <h5>Network Safety</h5>
+                                        <p>Secure browsing habits, VPN usage, and safe practices for public Wi-Fi networks.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="awareness-card">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-database"></i>
+                                        </div>
+                                        <h5>Data Protection</h5>
+                                        <p>Handle sensitive data securely and understand compliance requirements like GDPR.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Program Features -->
+                        <div class="awareness-features">
+                            <h4 class="features-title">Our Awareness Program Includes</h4>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <ul class="feature-list">
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Interactive Training Modules</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Simulated Phishing Campaigns</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Real-time Threat Updates</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Customized Training Content</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <ul class="feature-list">
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Employee Assessment Tests</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Security Policy Development</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Incident Response Training</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>Compliance Certifications</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Statistics Section -->
+                        <div class="awareness-stats">
+                            <div class="row">
+                                <div class="col-6 col-md-3">
+                                    <div class="stat-item">
+                                        <span class="stat-number">95%</span>
+                                        <span class="stat-label">Breach Prevention</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="stat-item">
+                                        <span class="stat-number">500+</span>
+                                        <span class="stat-label">Employees Trained</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="stat-item">
+                                        <span class="stat-number">50+</span>
+                                        <span class="stat-label">Organizations</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="stat-item">
+                                        <span class="stat-number">24/7</span>
+                                        <span class="stat-label">Support Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="awareness-cta">
+                            <a href="#contact" class="btn btn-awareness-primary">
+                                <i class="fa-solid fa-rocket"></i>
+                                <span>Start Training Program</span>
+                            </a>
+                            <a href="#" class="btn btn-awareness-outline">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>Download Brochure</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CYBER SECURITY AWARENESS SECTION -->
+
+        <!-- PROCESS FLOW DIAGRAM -->
+        <div class="process-flow-section">
+            <div class="process-header">
+                <h3 class="process-title">
+                    Vulnerability Assessment and<br>
+                    Penetration Testing (VAPT)<br>
+                    <span>Process Flow</span>
+                </h3>
+            </div>
+            <div class="process-cycle-wrapper">
+                <div class="process-bubble" data-step="1">Scope</div>
+                <div class="process-bubble" data-step="2">Information<br>Gathering</div>
+                <div class="process-bubble" data-step="3">Vulnerability<br>Detection</div>
+                <div class="process-bubble" data-step="4">Information<br>Analysis</div>
+                <div class="process-bubble" data-step="5">Privilege<br>Escalation</div>
+                <div class="process-bubble" data-step="6">Result<br>Analysis</div>
+                <div class="process-bubble" data-step="7">Reporting</div>
+                <div class="process-bubble" data-step="8">Cleanup</div>
+            </div>
+        </div>
+
+        <!-- GOALS AND OBJECTIVES -->
+        <div class="goals-section">
+            <h2 class="goals-main-title">Goals & Objectives</h2>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="goal-item">
+                        <div class="goal-number">1</div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">Scope</h4>
+                            <p class="goal-text"><span class="goal-label">Goal:</span> Define the boundaries and limitations of the VAPT assessment.</p>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">2</div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">Information Gathering</h4>
+                            <p class="goal-text"><span class="goal-label">Goal:</span> Collect essential information about the target environment.</p>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">3</div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">Vulnerability Detection</h4>
+                            <p class="goal-text"><span class="goal-label">Goal:</span> Identify security weaknesses, misconfigurations, and vulnerabilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="goal-item">
+                        <div class="goal-number">4</div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">Result Analysis</h4>
+                            <p class="goal-text"><span class="goal-label">Goal:</span> Analyze the outcomes and impact of the vulnerabilities identified.</p>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">5</div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">Reporting</h4>
+                            <p class="goal-text"><span class="goal-label">Goal:</span> Document and communicate the findings and recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">6</div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">Cleanup</h4>
+                            <p class="goal-text"><span class="goal-label">Goal:</span> Ensure that no unintentional damage is done during the testing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- =========================================
+         5. ABOUT US SECTION (NEW)
+    ========================================== -->
+    <section id="about" class="content-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold">Who are we</h1>
+            </div>
+            
+            <div class="about-text-blue">
+                <p>NativeSOC is an innovative product coming from the stable of NativeDefence. NativeSOC provides cyber resiliency consulting and technology-enabled services to anticipate, manage and defend against cyber threats. It also empowers clients to predict, prevent, detect, and respond to threats.</p>
+            </div>
+
+            <h2 class="team-heading">Our Advisors</h2>
+            
+            <div class="advisor-section mb-5">
+                <!-- Placeholder for Hemal Patel -->
+                <img src="https://ui-avatars.com/api/?name=Hemal+Patel&background=0D8ABC&color=fff&size=200" class="team-img-circle mx-auto mx-md-0" alt="Hemal Patel">
+                <div class="advisor-text">
+                    <h3 class="text-white">Hemal Patel</h3>
+                    <p>Hemal Patel is a successful serial Entrepreneur and a Technology Executive with diverse skills and management experience, including Sales, Marketing, Product Design, Product Development and Financial Management.</p>
+                    <p>He started his career with IceNet and has managed four successful tech start-ups and built global brands like Cyberoam and Elitecore in the domains of network security and telecom. He founded Elitecore as a software product company from Ahmedabad, India and grew up to 1700 employees from 11 at start and worldwide revenue grossing over $90mil.</p>
+                    <div class="mt-3"><i class="fa-brands fa-linkedin fs-3 text-white"></i></div>
+                </div>
+            </div>
+
+            <h2 class="team-heading">Our Core Team</h2>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-4 team-member">
+                    <img src="https://ui-avatars.com/api/?name=Srijan+Nandi&background=random&size=200" class="team-img-circle" alt="Srijan Nandi">
+                    <div class="team-name">Srijan Nandi</div>
+                    <div class="team-role">Director Technical</div>
+                    <a href="#"><i class="fa-brands fa-linkedin fs-4 text-white"></i></a>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="https://ui-avatars.com/api/?name=Bishwajit+Sutradhar&background=random&size=200" class="team-img-circle" alt="Bishwajit Sutradhar">
+                    <div class="team-name">Bishwajit Sutradhar</div>
+                    <div class="team-role">Director Sales</div>
+                    <a href="#"><i class="fa-brands fa-linkedin fs-4 text-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         6. PARTNERS SECTION (NEW)
+    ========================================== -->
+    <section id="partners" class="content-section partners-section">
+    <div class="container">
+        
+        <!-- Main Header -->
+        <div class="section-header text-center">
+            <div class="section-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h2 class="section-title">Our Partners & Alliances</h2>
+            <p class="section-subtitle">Building secure futures together with industry leaders</p>
+        </div>
+
+        <!-- Partnership Stats -->
+        <div class="partnership-stats">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-box-partner">
+                        <i class="fa-solid fa-building"></i>
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Partners</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box-partner">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box-partner">
+                        <i class="fa-solid fa-award"></i>
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Awards</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box-partner">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Partners -->
+        <div class="partners-category">
+            <h3 class="category-title">
+                <i class="fa-solid fa-star"></i>
+                Strategic Partners
+            </h3>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card modern">
+                        <div class="partner-logo">
+                            <span class="logo-text pl-macaws">
+                                MACAWS<br>
+                                <small>INFOTECH</small>
+                            </span>
+                        </div>
+                        <div class="partner-badge">Channel Partner</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card modern">
+                        <div class="partner-logo">
+                            <span class="logo-text pl-clarex">
+                                CLARE<span class="accent-text">X</span>
+                            </span>
+                        </div>
+                        <div class="partner-badge">Distribution Partner</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card modern">
+                        <div class="partner-logo">
+                            <span class="logo-text pl-tatva">
+                                Tatva<br>
+                                <small>NETWORKS</small>
+                            </span>
+                        </div>
+                        <div class="partner-badge">Technology Partner</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card modern">
+                        <div class="partner-logo">
+                            <span class="logo-text pl-gs">
+                                <i class="fa-solid fa-cube"></i> GS<br>
+                                <small>Computech Pvt. Ltd.</small>
+                            </span>
+                        </div>
+                        <div class="partner-badge">Solution Partner</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card modern">
+                        <div class="partner-logo">
+                            <span class="logo-text pl-krc">
+                                KRC<br>
+                                <small>FOUNDATION</small>
+                            </span>
+                        </div>
+                        <div class="partner-badge">Training Partner</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card modern">
+                        <div class="partner-logo">
+                            <span class="logo-text pl-ky2">
+                                KY2SC
+                            </span>
+                        </div>
+                        <div class="partner-badge">Academic Partner</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Alliance Partners -->
+        <div class="partners-category">
+            <h3 class="category-title">
+                <i class="fa-solid fa-microchip"></i>
+                Technology Alliance Partners
+            </h3>
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="partner-card modern tech-partner">
+                        <div class="tech-icon" style="background: linear-gradient(135deg, #3949ab, #5e35b1);">
+                            <i class="fa-solid fa-virus"></i>
+                        </div>
+                        <div class="partner-logo">
+                            <span class="logo-text tech-logo">VirusTotal</span>
+                        </div>
+                        <p class="partner-desc">Threat Intelligence Platform</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="partner-card modern tech-partner">
+                        <div class="tech-icon" style="background: linear-gradient(135deg, #00695c, #00897b);">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="partner-logo">
+                            <span class="logo-text tech-logo">OpenSearch</span>
+                        </div>
+                        <p class="partner-desc">Search & Analytics</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="partner-card modern tech-partner">
+                        <div class="tech-icon" style="background: linear-gradient(135deg, #5e35b1, #7e57c2);">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+                        <div class="partner-logo">
+                            <span class="logo-text tech-logo">osquery</span>
+                        </div>
+                        <p class="partner-desc">Endpoint Visibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications & Accreditations - NEW -->
+        <div class="partners-category">
+            <h3 class="category-title">
+                <i class="fa-solid fa-certificate"></i>
+                Certifications & Accreditations
+            </h3>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h5>ISO 27001</h5>
+                        <p>Information Security Management</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h5>ISO 27701</h5>
+                        <p>Privacy Information Management</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <h5>SOC 2 Type II</h5>
+                        <p>Security & Availability</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <h5>PCI DSS</h5>
+                        <p>Payment Card Industry</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h5>GDPR</h5>
+                        <p>Data Protection Compliant</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <h5>CERT-IN</h5>
+                        <p>Empanelled Organization</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h5>HIPAA</h5>
+                        <p>Healthcare Compliance</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5>CMMI Level 3</h5>
+                        <p>Process Maturity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry Recognition - NEW -->
+        <div class="partners-category">
+            <h3 class="category-title">
+                <i class="fa-solid fa-trophy"></i>
+                Awards & Recognition
+            </h3>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h5>Best SOC Provider 2023</h5>
+                    <p class="award-issuer">CyberSecurity Excellence Awards</p>
+                    <span class="award-year">2023</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h5>Top 10 Cybersecurity Startups</h5>
+                    <p class="award-issuer">Silicon India</p>
+                    <span class="award-year">2022</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h5>Innovation in Security</h5>
+                    <p class="award-issuer">Gujarat IT Awards</p>
+                    <span class="award-year">2023</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fa-solid fa-ribbon"></i>
+                    </div>
+                    <h5>Excellence in Training</h5>
+                    <p class="award-issuer">National Skill Development</p>
+                    <span class="award-year">2022</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partnership Benefits - NEW -->
+        <div class="partners-category">
+            <h3 class="category-title">
+                <i class="fa-solid fa-handshake-angle"></i>
+                Partner With Us
+            </h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h5>Revenue Growth</h5>
+                        <p>Expand your portfolio with cutting-edge cybersecurity solutions</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h5>Training & Support</h5>
+                        <p>Comprehensive training programs for your team</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h5>Marketing Support</h5>
+                        <p>Co-marketing opportunities and lead generation</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h5>24/7 Support</h5>
+                        <p>Dedicated partner success team at your service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner Testimonial - NEW -->
+        <div class="partner-testimonial-section">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="partner-testimonial-card">
+                        <div class="quote-mark">"</div>
+                        <p class="testimonial-text">
+                            Partnering with NATIVEDEFENCE has been a game-changer for our business. Their innovative SOC technology and unwavering support have enabled us to deliver world-class security solutions to our clients. The partnership has not only enhanced our service portfolio but also significantly boosted our market presence.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-partner">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div class="author-details">
+                                <h5>Rajesh Kumar</h5>
+                                <p>CEO, MACAWS Infotech</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Become a Partner CTA - NEW -->
+        <div class="partner-cta-section">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="cta-title">Ready to Partner With Us?</h3>
+                    <p class="cta-description">Join our growing network of partners and unlock new business opportunities in the cybersecurity space.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#contact" class="btn btn-modern-primary btn-lg">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Become a Partner</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- =========================================
+         7. CONTACT SECTION (NEW)
+    ========================================== -->
+    <section id="contact" class="content-section" aria-labelledby="contact-heading">
+    <div class="container">
+        <header class="text-center mb-5">
+            <h1 id="contact-heading" class="display-4 fw-bold">Contact Us</h1>
+        </header>
+
+        <div class="row align-items-center">
+            <!-- Contact Info -->
+            <aside class="col-lg-5 mb-5 mb-lg-0 contact-info-box" aria-label="Contact Information">
+                <p class="text-muted lead mb-5">Get in touch with us to secure your digital infrastructure.</p>
+                
+                <address class="mb-0">
+                    <div class="d-flex mb-4">
+                        <div class="me-3" aria-hidden="true">
+                            <i class="fa-solid fa-location-dot fs-4 text-primary"></i>
+                        </div>
+                        <div>
+                            <h2 class="h5 text-white mb-1">AHMEDABAD</h2>
+                            <p class="text-muted small mb-0">
+                                D-311 Ganesh Glory 11, Near BSNL Office,<br>
+                                Jagatpur Road, Jagatpur,<br>
+                                Ahmedabad, Gujarat 382470
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="me-3" aria-hidden="true">
+                            <i class="fa-solid fa-envelope fs-4 text-primary"></i>
+                        </div>
+                        <div>
+                            <h2 class="h5 text-white mb-1">Email</h2>
+                            <a href="mailto:info@nativedefence.com" 
+                               class="text-muted small text-decoration-none">
+                                info@nativedefence.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="me-3" aria-hidden="true">
+                            <i class="fa-solid fa-phone fs-4 text-primary"></i>
+                        </div>
+                        <div>
+                            <h2 class="h5 text-white mb-1">Phone</h2>
+                            <a href="tel:+911234567890" 
+                               class="text-muted small text-decoration-none">
+                                +91 123 456 7890
+                            </a>
+                        </div>
+                    </div>
+                </address>
+            </aside>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-glass-form">
+                    <form method="POST" action="/submit-contact" novalidate>
+                        <fieldset>
+                            <legend class="visually-hidden">Contact Form</legend>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="firstName" class="contact-label">
+                                            First Name <span aria-label="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="firstName"
+                                            name="firstName"
+                                            class="form-control form-control-glass" 
+                                            placeholder="e.g. John"
+                                            required
+                                            aria-required="true"
+                                            autocomplete="given-name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="lastName" class="contact-label">
+                                            Last Name <span aria-label="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="lastName"
+                                            name="lastName"
+                                            class="form-control form-control-glass" 
+                                            placeholder="e.g. Doe"
+                                            required
+                                            aria-required="true"
+                                            autocomplete="family-name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="contact-label">
+                                    Email Address <span aria-label="required">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    name="email"
+                                    class="form-control form-control-glass" 
+                                    placeholder="e.g. john@mail.com"
+                                    required
+                                    aria-required="true"
+                                    autocomplete="email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="contact-label">Phone Number</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone"
+                                    name="phone"
+                                    class="form-control form-control-glass" 
+                                    placeholder="e.g. +91 98765 43210"
+                                    pattern="[+]?[0-9\s-()]+"
+                                    autocomplete="tel">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="subject" class="contact-label">Subject</label>
+                                <input 
+                                    type="text" 
+                                    id="subject"
+                                    name="subject"
+                                    class="form-control form-control-glass"
+                                    placeholder="Brief subject of your inquiry">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="contact-label">Comment</label>
+                                <textarea 
+                                    id="message"
+                                    name="message"
+                                    class="form-control form-control-glass" 
+                                    rows="4" 
+                                    placeholder="Please let us know how we can help"
+                                    aria-describedby="message-help"></textarea>
+                                <small id="message-help" class="form-text text-muted">
+                                    Maximum 500 characters
+                                </small>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                class="btn-submit mt-3"
+                                aria-label="Submit contact form">
+                                Submit 
+                                <i class="fa-regular fa-face-smile ms-2" aria-hidden="true"></i>
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- FOOTER -->
+     <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo d-flex align-items-center text-white">
+                        <i class="fa-solid fa-shield-cat fs-2 me-2 text-primary"></i>
+                        <div>
+                            <h4 class="fw-bold mb-0">NATIVE<span class="fw-light">DEFENCE</span></h4>
+                            <small style="font-size: 0.65rem;">An ISO 27001 Certified Company</small>
+                        </div>
+                    </div>
+                    <p>
+                        NativeSOC is an expert-driven Cyber Security Services company, with its Technical and SOC operations based out of Ahmedabad and Sales and Marketing driving from Mumbai.
+                    </p>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">NativeSOC</a></li>
+                        <li><a href="#">Academy</a></li>
+                        <li><a href="#">VAPT</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="mb-1"><strong class="text-white">AHMEDABAD</strong></p>
+                    <p class="small mb-3">D-311 Ganesh Glory 11, Jagatpur Rd, Near BSNL Office, Gujarat 382470</p>
+                    
+                    <p class="mb-1"><strong class="text-white">KOLKATA</strong></p>
+                    <p class="small">8 BECK BAGAN ROW KOLKATA - 700017</p>
+                </div>
+
+                <!-- Column 4: Social -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Get In Touch</h5>
+                    <p><i class="fa-solid fa-envelope text-primary me-2"></i> sales@nativedefence.com</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright 2023 ©️ NATIVEDEFENCE TECH LLP. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navigation Script -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            
+            // Show target section
+            const target = document.getElementById(sectionId);
+            if(target) {
+                target.classList.add('active');
+            }
+
+            // Update Navbar Active State
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-page');
+            });
+            
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                // Logic to highlight the correct link based on text or onclick attribute
+                if(link.getAttribute('onclick') && link.getAttribute('onclick').includes(`'${sectionId}'`)) {
+                    link.classList.add('active-page');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
