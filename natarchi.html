@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NativeSOC Architecture - Native Defence</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- THEME VARIABLES --- */
+        :root {
+            --bg-dark: #0b1120;
+            --primary-blue: #3b82f6;
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(30, 41, 59, 0.4);
+            --text-gray: #cbd5e1;
+            --text-white: #ffffff;
+            --info-box-blue: #bfdbfe; /* Light blue for the info box */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 20%, #1e293b 0%, transparent 50%),
+                repeating-linear-gradient(45deg, rgba(59, 130, 246, 0.03) 0px, rgba(59, 130, 246, 0.03) 1px, transparent 1px, transparent 10px);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR (Consistent) --- */
+        .navbar {
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px 0;
+        }
+        .navbar-brand { display: flex; align-items: center; gap: 12px; }
+        .brand-icon { font-size: 2rem; color: var(--primary-blue); }
+        .brand-text h1 { font-size: 1.2rem; font-weight: 700; margin: 0; line-height: 1; letter-spacing: 1px; color: white; }
+        .brand-text span { color: var(--primary-blue); }
+        .brand-text p { font-size: 0.65rem; margin: 0; color: #cbd5e1; }
+        
+        .nav-link { color: #e2e8f0 !important; font-weight: 500; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-blue) !important; }
+        .nav-link.btn-home { background-color: var(--primary-blue); color: white !important; padding: 8px 24px !important; border-radius: 6px; }
+        
+        .dropdown-menu { background-color: #1e293b; border: 1px solid var(--glass-border); margin-top: 15px; }
+        .dropdown-item { color: #cbd5e1; padding: 10px 20px; }
+        .dropdown-item:hover { background-color: rgba(59, 130, 246, 0.1); color: var(--primary-blue); }
+
+        /* --- PAGE TITLE & BANNER --- */
+        .page-title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .page-title span { color: var(--primary-blue); }
+
+        .banner-container {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .banner-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--glass-border);
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        /* --- ARCHITECTURE DIAGRAM CARD --- */
+        .diagram-card {
+            background: rgba(15, 23, 42, 0.6); /* Darker background for diagram container */
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 20px 0 20px; /* No bottom padding, box touches bottom */
+            position: relative;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .diagram-img {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 30px;
+            /* Filter to blend stock image slightly with theme */
+            filter: contrast(1.1) brightness(0.9); 
+        }
+
+        /* The Blue Info Box at bottom of diagram */
+        .info-alert-box {
+            background-color: #add8e6; /* Light blue matching screenshot */
+            background: linear-gradient(90deg, #bae6fd 0%, #7dd3fc 100%);
+            width: 80%;
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: #0f172a; /* Dark text */
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            transform: translateY(50%); /* Push it half out */
+            margin-bottom: 40px; /* Compensate for push */
+        }
+
+        /* --- CERTIFICATION SECTION --- */
+        .cert-section-title {
+            text-align: center;
+            color: #93c5fd; /* Lighter blue text */
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
+
+        .cert-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #3b82f6; /* Blue border */
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .cert-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+        .cert-list li {
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cert-list li::before {
+            content: "•";
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            line-height: 0;
+        }
+
+        .cloud-icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .cloud-icon {
+            font-size: 5rem;
+            color: var(--primary-blue);
+            filter: drop-shadow(0 0 10px rgba(59,130,246,0.5));
+        }
+        .lock-icon {
+            color: #fbbf24; /* Gold for lock */
+            font-size: 2rem;
+            margin-left: -20px;
+            margin-top: 30px;
+        }
+
+        /* --- FOOTER (Consistent) --- */
+        footer {
+            background: rgba(11, 17, 32, 0.98);
+            border-top: 1px solid var(--glass-border);
+            padding-top: 60px;
+            padding-bottom: 20px;
+            margin-top: 80px;
+            font-size: 0.9rem;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 20px;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        .footer-brand p, .footer-desc, .contact-info p, .footer-links a { color: #cbd5e1; text-decoration: none; }
+        .footer-heading { color: white; font-weight: 600; margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .info-alert-box { width: 95%; transform: translateY(20%); padding: 15px; font-size: 0.85rem; }
+            .banner-img { height: 150px; }
+            .cert-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-shield-halved brand-icon"></i>
+                <div class="brand-text">
+                    <h1>NATIVE<span>DEFENCE</span></h1>
+                    <p>An ISO 27001 Certified Company</p>
+                </div>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="fa-solid fa-bars text-white"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link btn-home" href="index.html">Home</a></li>
+                    
+                    <!-- NativeSOC Dropdown (Active) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="NativeSOC.html" data-bs-toggle="dropdown">NativeSOC</a>
+                        
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown">Academy</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coures.html">Courses</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="vapt.html" data-bs-toggle="dropdown">VAPT</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cybers.html">CYBERSECURITY</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Header Title -->
+        <h1 class="page-title">NativeSOC <span>Architecture</span></h1>
+
+        <!-- Server Rack Banner -->
+        <div class="banner-container">
+            <img src="https://static.wixstatic.com/media/b12bd8_67e10dd415ab4e6e973fe7a1e796b305~mv2.png/v1/fill/w_839,h_270,al_c,lg_1,q_85,enc_avif,quality_auto/pix%201.png" alt="Server Data Center" class="banner-img">
+        </div>
+
+        <!-- Architecture Diagram Section -->
+        <div class="diagram-card">
+            <!-- 
+                Since the exact vector diagram from the image cannot be generated via code, 
+                a high-quality placeholder representing 'SOC Architecture' is used.
+            -->
+                <img src="https://static.wixstatic.com/media/b12bd8_676aeee1de7d4261a34bb017aca1b684~mv2.png/v1/fill/w_692,h_719,al_c,lg_1,q_90,enc_avif,quality_auto/chart.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/9662/9662216.png" style="width: 100px; margin-bottom: 20px; filter: invert(1);" alt="Icon Placeholder">
+            <img src="https://mermaid.ink/img/pako:eNptksFuwjAMhl8l8rnT9gIcSNo00A5D09tODiFKk9Y1cZI4DKrqd5-UlgG7IIns__Ovsx2RNRVSRd9GryvEEx-MhTtyWOCQYYM9LmiB9zQnI4p8hTXO8M47h-v15oT24M_4xO45_5A01R0-0ZziE35e3tA-40j-jL_wQf6Ea_yWv2E7J4vJtqJCa1S9rNBSK0-5Bq1rBdpID9rJ5x1QoR24oB20o6zQyFzIDrQ8F6K1bZ_5YtVn2X224K1oZdt-nS9mfc62Wf7wR7bK6vI-O31cR3uW1S87WqgW22_7bHda7bLVW7bqj70yX5S1XjQo-kG3D7q9r6xV3Wv13q96_7-uBq0N2l4pS9p-K60q6660-04d9w20E7R3QO_Qy-f-G5T-lYw" alt="Architecture Diagram" class="diagram-img">
+            
+            <!-- NOTE: In a real production environment, you would replace the img src above 
+                 with your specific diagram file (e.g., architecture.png). 
+                 The styles below ensure it fits the design provided. 
+            -->
+            
+            <!-- Blue Info Box (Overlapping bottom) -->
+            <div class="info-alert-box">
+                NATIVESOC architecture is simple yet robust with co-related SOAR platform to counter new age impending attacks.
+            </div>
+        </div>
+
+        <!-- Cloud Certification Section -->
+        <div class="row justify-content-center" style="margin-top: 80px;">
+            <div class="col-lg-10">
+                <h2 class="cert-section-title">Secured & Certified CLOUD</h2>
+                
+                <div class="cert-card">
+                    <div class="row align-items-center">
+                        <!-- Certification Lists -->
+                        <div class="col-md-8">
+                            <h4 class="cert-header">ISMS CLOUD SECURITY CERTIFICATION</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="cert-list">
+                                        <li>ISO/IEC 27017:2015</li>
+                                        <li>ISO 9001:2015</li>
+                                        <li>PCI-DSS</li>
+                                        <li>EMS</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="cert-list">
+                                        <li>ISO/IEC 27018:2019</li>
+                                        <li>ISO/IEC 20000-1:2018</li>
+                                        <li>ISO/IEC 27001-1:2013</li>
+                                        <li>OHS</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cloud Icon -->
+                        <div class="col-md-4 text-center">
+                            <div class="cloud-icon-container">
+                                <i class="fa-solid fa-cloud cloud-icon"></i>
+                                <i class="fa-solid fa-lock lock-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                
+                <div class="col-lg-5 col-md-6">
+                    <div class="navbar-brand footer-brand mb-3">
+                        <i class="fa-solid fa-shield-halved brand-icon"></i>
+                        <div class="brand-text">
+                            <h1>NATIVE<span>DEFENCE</span></h1>
+                            <p>An ISO 27001 Certified Company</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc pe-lg-5">
+                        NativeSOC is an expert-driven Cyber Security Services company, with its Technical and SOC operations based out of Ahmedabad and Sales and Marketing driving from Mumbai.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Navigation</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="NativeSOC.html">NativeSOC</a></li>
+                        <li><a href="academy.html">Academy</a></li>
+                        <li><a href="vapt.html">VAPT</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 contact-info">
+                    <h5 class="footer-heading">Contact Info</h5>
+                    <p><i class="fa-solid fa-envelope me-2" style="color:var(--primary-blue)"></i> sales@nativedefence.com</p>
+                    
+                    <p class="mt-3"><strong class="text-white">AHMEDABAD</strong><br>
+                    D-311 Ganesh Glory 11, Jagatpur Rd, Near BSNL Office, Off S G Highway, Jagatpur, Ahmedabad Gujarat 382470</p>
+
+                    <p><strong class="text-white">KOLKATA</strong><br>
+                    8 BECK BAGAN ROW KOLKATA - 700017</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright 2023 © NATIVEDEFENCE TECH LLP. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

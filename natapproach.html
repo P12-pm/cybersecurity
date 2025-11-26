@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NativeSOC Approach | NativeDefence</title>
+    <!-- Importing a font similar to the screenshot (Google Fonts: Roboto/Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ================= VARIABLES & RESET ================= */
+:root {
+    --bg-dark: #05080f;
+    --bg-card: #0d121d;
+    --primary-blue: #4285F4; /* Button Blue */
+    --accent-blue: #2d6cdf;
+    --text-white: #ffffff;
+    --text-gray: #b0b8c4;
+    --border-color: #1f293a;
+    --nav-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= BACKGROUND WAVE ================= */
+/* Simulating the wave background using a fixed gradient/image */
+.bg-wave-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 50% 30%, rgba(45, 108, 223, 0.15) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 10px);
+    /* If you have the actual wave image, replace the background property above with:
+       background: url('your-wave-image.jpg') no-repeat center center fixed;
+       background-size: cover; 
+    */
+    pointer-events: none;
+}
+
+/* ================= HEADER & NAV ================= */
+.main-header {
+    background-color: rgba(5, 8, 15, 0.95);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-icon {
+    width: 40px;
+    height: auto;
+}
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-white);
+}
+.logo-text span {
+    color: var(--primary-blue); /* Using Blue for 'NATIVE' part */
+}
+.logo-text small {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: var(--text-gray);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+}
+
+/* Navbar Links */
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: var(--primary-blue);
+}
+
+/* The "Home" Button Style */
+.nav-btn {
+    background-color: var(--primary-blue);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: white !important;
+}
+.nav-btn:hover {
+    background-color: #3367d6;
+}
+
+/* Dropdown Logic */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-card);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+    top: 100%; /* Right below the link */
+    left: 0;
+    z-index: 1;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: var(--text-gray);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--primary-blue);
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Highlight current page in dropdown */
+.dropdown-content a.current-page {
+    color: var(--primary-blue);
+    border-left: 3px solid var(--primary-blue);
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+/* ================= MAIN CONTENT SECTIONS ================= */
+main {
+    padding: 60px 0;
+}
+
+.soc-section {
+    max-width: 900px;
+    margin: 0 auto 100px auto;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Main Image Styling */
+.main-image-wrapper img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Description Text */
+.section-desc {
+    font-size: 0.95rem;
+    color: #d1d5db; /* Lighter gray for readability */
+    margin-bottom: 40px;
+    text-align: justify;
+    text-align-last: center; /* Centers the last line */
+    padding: 0 20px;
+}
+
+/* Feature Box (Image + List) */
+.feature-box {
+    display: flex;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.feature-img {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Specific styling for the "BREACHED" overlay text effect */
+.overlay-text-red {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff4444;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(255,0,0,0.8);
+    letter-spacing: 2px;
+}
+
+.feature-list-wrapper {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: var(--text-white);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* The Blue Dot Bullet Point */
+.feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--primary-blue);
+}
+
+/* ================= FOOTER ================= */
+.main-footer {
+    background-color: #020408;
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-col h3 {
+    color: var(--text-white);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.footer-desc {
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 0.75rem;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+.footer-links a:hover {
+    color: var(--primary-blue);
+}
+
+.address-block {
+    margin-top: 15px;
+}
+.address-block h4 {
+    color: var(--text-white);
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .feature-box {
+        flex-direction: column;
+    }
+
+    .feature-img {
+        height: 200px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50/2f6ec9/ffffff?text=N" alt="Shield Icon" class="logo-icon">
+                <div class="logo-text">
+                    <span>NATIVE</span>DEFENCE
+                    <small>An ISO 27001 Certified Company</small>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Home</a></li>
+                    
+                    <!-- The Dropdown You Requested -->
+                    <li class="dropdown">
+                        <a href="NativeSOC.html" class="active-link">NativeSOC <i class="fas fa-caret-down"></i></a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="academy.html">Academy <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="coures.html">Courses</a>
+                           
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="vapt.html">VAPT <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="cybers.html">CYBERSECURITY</a>
+                           
+                        </div>
+                    </li>
+
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Background Wave Effect (Simulated with Image Overlay) -->
+    <div class="bg-wave-overlay"></div>
+
+    <main>
+        <!-- XDR Section -->
+        <section class="soc-section" id="xdr">
+            <h2 class="section-title">XDR</h2>
+            
+            <!-- Top Image -->
+            <div class="main-image-wrapper">
+                <!-- Using placeholder that matches the "Hands on Keyboard" look -->
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="XDR Cyber Security">
+            </div>
+
+            <!-- Description Text -->
+            <p class="section-desc">
+                The NativeSOC Extended Detection and Response (XDR) platform provides a comprehensive security solution that detects, analyzes, and responds to threats across multiple IT infrastructure layers. NativeSOC collects telemetry from endpoints, network devices, cloud workloads, third-party APIs, and other sources for unified security monitoring and protection.
+            </p>
+
+            <!-- Feature Split -->
+            <div class="feature-box">
+                <div class="feature-img">
+                    <!-- Placeholder for the "Breached/Red Alert" image -->
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Threat Detection">
+                    <div class="overlay-text-red">BREACHED</div>
+                </div>
+                <div class="feature-list-wrapper">
+                    <ul class="feature-list">
+                        <li>Threat Hunting</li>
+                        <li>Behavioral Analysis</li>
+                        <li>Automated Response</li>
+                        <li>Cloud Workload Protection</li>
+                        <li>Threat Intelligence</li>
+                        <li>Compliance and Reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIEM Section -->
+        <section class="soc-section" id="siem">
+            <h2 class="section-title">SIEM</h2>
+            
+            <!-- Top Image -->
+            <div class="main-image-wrapper">
+                <!-- Using placeholder for the "Screens/NOC" look -->
+                <img src="https://images.unsplash.com/photo-1551808525-51a943718d56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="SIEM Monitoring">
+            </div>
+
+            <!-- Description Text -->
+            <p class="section-desc">
+                The NativeSOC Security Information and Event Management (SIEM) solution is a centralized platform for aggregating and analyzing telemetry in real time for threat detection and compliance. NativeSOC collects event data from various sources like endpoints, network devices, cloud workloads, and applications for broader security coverage.
+            </p>
+
+            <!-- Feature Split -->
+            <div class="feature-box">
+                <div class="feature-img">
+                    <!-- Placeholder for the "Login/Interface" image -->
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Login Security">
+                </div>
+                <div class="feature-list-wrapper">
+                    <ul class="feature-list">
+                        <li>Security Log Analysis</li>
+                        <li>Vulnerability Detection</li>
+                        <li>Security Configuration Assessment</li>
+                        <li>Regulatory Compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <!-- Col 1: Brand -->
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/40x40/2f6ec9/ffffff?text=N" alt="Shield Icon">
+                    <div class="logo-text">
+                        <span>NATIVE</span>DEFENCE
+                        <small>An ISO 27001 Certified Company</small>
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    NativeSOC is an expert-driven Cyber Security Services company, with its Technical and SOC operations based out of Ahmedabad and Sales and Marketing driving from Mumbai. NativeSOC Team works with End-Customers, Resellers, SIs, and OEMs potentially due to its vast experience in the domain.
+                </p>
+            </div>
+
+            <!-- Col 2: Navigation -->
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="NativeSOC.html">NativeSOC</a></li>
+                    <li><a href="academy.html">Academy</a></li>
+                    <li><a href="vapt.html">VAPT</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contact -->
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><strong>sales@nativedefence.com</strong></p>
+                
+                <div class="address-block">
+                    <h4>AHMEDABAD</h4>
+                    <p>D-311 Ganesh Glory 11, Jagatpur Rd, Near BSNL Office, Off S G Highway, Jagatpur, Ahmedabad, Gujarat 382470</p>
+                </div>
+
+                <div class="address-block">
+                    <h4>KOLKATA</h4>
+                    <p>8 BECK BAGAN ROW KOLKATA - 700017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

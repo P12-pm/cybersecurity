@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NativeSOC Approach | Native Defence</title>
+    
+    <!-- Google Fonts: Outfit (Modern Sans-Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- GLOBAL VARIABLES & RESET --- */
+        :root {
+            --primary-dark: #0a0f1c; /* Deep Navy/Black Background */
+            --accent-blue: #2196f3;  /* Bright Cyber Blue */
+            --text-grey: #b0b8c4;
+            --text-light: #e0e0e0;
+            --white: #ffffff;
+            --warning-yellow: #ffc107;
+            --success-green: #4caf50;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            overflow-x: hidden;
+            /* Background matching the screenshot's wavy dark theme */
+            background-image: 
+                linear-gradient(to bottom, rgba(10, 15, 28, 0.9), rgba(10, 15, 28, 0.95)),
+                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* --- NAVBAR STYLING --- */
+        .navbar {
+            background-color: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .logo-icon {
+            color: var(--accent-blue);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            color: #ddd !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 18px !important;
+            margin: 0 2px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue) !important;
+        }
+
+        /* Active state for NativeSOC Dropdown */
+        .nav-link.active-custom {
+            background-color: var(--accent-blue);
+            color: white !important;
+            border-radius: 4px;
+        }
+
+        /* --- PAGE CONTENT STYLING --- */
+        .page-content {
+            padding-top: 120px; /* Space for fixed header */
+            padding-bottom: 80px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 50px;
+            max-width: 900px;
+        }
+
+        /* Tip Items */
+        .tip-item {
+            margin-bottom: 50px;
+        }
+
+        .tip-heading {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .tip-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .tip-list li {
+            color: var(--text-grey);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .tip-example {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-left: 3px solid var(--warning-yellow);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .tip-example i {
+            color: var(--warning-yellow);
+            margin-right: 8px;
+        }
+
+        /* Bottom CTA Section */
+        .cta-section {
+            margin-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 50px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-list li i {
+            color: var(--success-green);
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #05080f;
+            padding-top: 70px;
+            padding-bottom: 30px;
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer h5 { color: white; font-weight: 600; margin-bottom: 20px; }
+        .footer ul { list-style: none; padding: 0; }
+        .footer ul li { margin-bottom: 12px; }
+        .footer a { color: var(--text-grey); text-decoration: none; transition: 0.2s; }
+        .footer a:hover { color: var(--accent-blue); padding-left: 5px; }
+        .social-icons a {
+            display: inline-flex; justify-content: center; align-items: center;
+            width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+            border-radius: 50%; margin-right: 10px; color: white; transition: 0.3s;
+        }
+        .social-icons a:hover { background: var(--accent-blue); transform: translateY(-3px); }
+        .copyright { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title { font-size: 2rem; }
+            .tip-heading { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-icon">
+                    <!-- Replace with your actual Logo image path -->
+                    <img src="img/NATIVEDEFENCE_Logo1.png" width="200px" height="Auto" alt="Native Defence Logo">
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <!-- NativeSOC Dropdown (ACTIVE) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active-custom" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            NativeSOC
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item active" href="natapprach.html">NativeSOC Approach</a></li>
+                            <li><a class="dropdown-item" href="natfea.html">NativeSOC Features</a></li>
+                            <li><a class="dropdown-item" href="natarchi.html">NativeSOC Architecture</a></li>
+                            <li><a class="dropdown-item" href="nathow.html">How it works</a></li>
+                            <li><a class="dropdown-item" href="natwhy.html">Why NativeSOC</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Academy Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Academy
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="coures.html">Courses</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- VAPT Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            VAPT
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="cybers.html">CybersecurityAwareness</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Other Links -->
+                    <li class="nav-item"><a class="nav-link" href="index.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT SECTION -->
+    <section class="page-content">
+        <div class="container">
+            
+            <!-- Header -->
+            <h1 class="section-title">Cybersecurity Safety Tips for Everyone</h1>
+            <p class="intro-text">
+                In today's digital world, staying secure online is more important than ever. Cyber threats are constantly evolving, and a single mistake can put your personal and financial information at risk. Here are some simple yet effective cybersecurity best practices to help you stay protected online.
+            </p>
+
+            <!-- Tip 1 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">1. Use Strong & Unique Passwords</h3>
+                <ul class="tip-list">
+                    <li>Create long, complex passwords (12+ characters).</li>
+                    <li>Never reuse passwords across multiple accounts.</li>
+                    <li>Use a password manager to store and generate strong passwords.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> Using "password123" for all accounts is a hacker's dream. Instead, use "Tr33@H0use!$ecure2024" and let your password manager handle the rest.
+                </div>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">2. Enable Two-Factor Authentication (2FA)</h3>
+                <ul class="tip-list">
+                    <li>Activate 2FA for email, banking, and social media.</li>
+                    <li>Use an authenticator app (Google Authenticator, Authy) instead of SMS codes.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> If a hacker gets your password, they still can't log in without the second authentication factor.
+                </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">3. Think Before You Click</h3>
+                <ul class="tip-list">
+                    <li>Be cautious of unknown links in emails and messages.</li>
+                    <li>Hover over links to verify their destination.</li>
+                    <li>Ignore urgent-sounding emails demanding quick action.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> You get an email saying, "Your PayPal account is at risk! Click here to verify." Instead of clicking, log in directly from the official website.
+                </div>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">4. Keep Your Software & Devices Updated</h3>
+                <ul class="tip-list">
+                    <li>Enable automatic updates for your system, apps, and antivirus.</li>
+                    <li>Regularly install security patches to prevent cyberattacks.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> The WannaCry ransomware attack (2017) affected thousands of outdated Windows systems that lacked the latest security patches.
+                </div>
+            </div>
+
+            <!-- Tip 5 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">5. Watch Out for Phishing Scams</h3>
+                <ul class="tip-list">
+                    <li>Never provide personal details over email or phone.</li>
+                    <li>Verify the sender's identity before responding.</li>
+                    <li>Look out for spelling errors, unknown senders, and suspicious links.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> A hacker pretends to be your bank and asks for your details via email. Always call your bank directly to confirm.
+                </div>
+            </div>
+
+            <!-- Tip 6 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">6. Avoid Using Public Wi-Fi Without a VPN</h3>
+                <ul class="tip-list">
+                    <li>Public Wi-Fi networks can be unsafe.</li>
+                    <li>Use a VPN (Virtual Private Network) to encrypt your connection.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> A hacker can set up a fake Wi-Fi network named "Starbucks Free Wi-Fi" to steal your data. Always verify with staff before connecting.
+                </div>
+            </div>
+
+            <!-- Tip 7 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">7. Secure Your Social Media Accounts</h3>
+                <ul class="tip-list">
+                    <li>Set your profiles to private and limit personal details.</li>
+                    <li>Be cautious of friend requests from strangers.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> Posting "On vacation from June 10-20!" informs burglars that your home is empty. Share travel updates after you return.
+                </div>
+            </div>
+
+            <!-- Tip 8 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">8. Back Up Your Important Data</h3>
+                <ul class="tip-list">
+                    <li>Use cloud storage and an external hard drive for backups.</li>
+                    <li>Keep multiple copies of critical files.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> Ransomware locks your files and demands a fee. With backups, you can restore your data without paying hackers.
+                </div>
+            </div>
+
+            <!-- Tip 9 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">9. Lock Your Devices</h3>
+                <ul class="tip-list">
+                    <li>Use PINs, fingerprints, or facial recognition for security.</li>
+                    <li>Enable auto-lock after inactivity.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> Leaving your phone unlocked in a café can expose banking apps, social media, and private messages.
+                </div>
+            </div>
+
+            <!-- Tip 10 -->
+            <div class="tip-item">
+                <h3 class="tip-heading">10. Be Wary of Unknown USBs & Downloads</h3>
+                <ul class="tip-list">
+                    <li>Avoid plugging in unknown USB drives.</li>
+                    <li>Download software only from trusted websites.</li>
+                </ul>
+                <div class="tip-example">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Example:</strong> A hacker leaves infected USBs in a parking lot, hoping someone picks one up and plugs it into their computer, installing malware.
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="text-center my-5">
+                <h2 class="display-6 fw-bold">Stay Safe & Stay Smart Online!</h2>
+                <p class="text-grey">Cybersecurity is not just for businesses—it's essential for everyone. Implement these simple steps to keep your online presence safe, secure, and private.</p>
+            </div>
+
+            <!-- Professional Services Section -->
+            <div class="cta-section">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="text-white mb-3">Need Professional Cybersecurity Services?</h3>
+                        <p class="text-grey mb-4">Our expert team can help you with:</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-square-check"></i> Security audits</li>
+                            <li><i class="fa-solid fa-square-check"></i> Penetration testing</li>
+                            <li><i class="fa-solid fa-square-check"></i> Incident response</li>
+                            <li><i class="fa-solid fa-square-check"></i> Employee awareness training</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-center mt-4 mt-md-0">
+                        <div>
+                            <p class="text-white mb-3"><i class="fa-solid fa-phone me-2 text-primary"></i> Contact us today to secure your digital world!</p>
+                            <a href="contact.html" class="btn btn-primary px-4 py-2 rounded-pill">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo d-flex align-items-center text-white">
+                        <i class="fa-solid fa-shield-cat fs-2 me-2 text-primary"></i>
+                        <div>
+                            <h4 class="fw-bold mb-0">NATIVE<span class="fw-light">DEFENCE</span></h4>
+                            <small style="font-size: 0.65rem;">An ISO 27001 Certified Company</small>
+                        </div>
+                    </div>
+                    <p>
+                        NativeSOC is an expert-driven Cyber Security Services company, with its Technical and SOC operations based out of Ahmedabad and Sales and Marketing driving from Mumbai.
+                    </p>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="NativeSOC.html">NativeSOC</a></li>
+                        <li><a href="academy.html">Academy</a></li>
+                        <li><a href="vapt.html">VAPT</a></li>
+                        <li><a href="about.html">About us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="mb-1"><strong class="text-white">AHMEDABAD</strong></p>
+                    <p class="small mb-3">D-311 Ganesh Glory 11, Jagatpur Rd, Near BSNL Office, Gujarat 382470</p>
+                    
+                    <p class="mb-1"><strong class="text-white">KOLKATA</strong></p>
+                    <p class="small">8 BECK BAGAN ROW KOLKATA - 700017</p>
+                </div>
+
+                <!-- Column 4: Social -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Get In Touch</h5>
+                    <p><i class="fa-solid fa-envelope text-primary me-2"></i> sales@nativedefence.com</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright 2023 ©️ NATIVEDEFENCE TECH LLP. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar Scroll Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '10px 0';
+                    navbar.style.background = 'rgba(10, 15, 28, 1)';
+                    navbar.classList.add('shadow');
+                } else {
+                    navbar.style.padding = '15px 0';
+                    navbar.style.background = 'rgba(10, 15, 28, 0.95)';
+                    navbar.classList.remove('shadow');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
